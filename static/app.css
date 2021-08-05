@@ -3,6 +3,10 @@ body {
 	color: whitesmoke;
 }
 
+.container {
+	margin-top: 5% !important;
+}
+
 #boggle {
 	color: whitesmoke;
 }
