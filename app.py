@@ -1,12 +1,15 @@
+import os
 from boggle import Boggle
 from flask import Flask, request, render_template, jsonify, session
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
 
+# use secret key in production or default to our dev one
 
 app.config['SECRET_KEY'] = 'key'
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'shh')
 debug = DebugToolbarExtension(app)
 
 boggle_game = Boggle()
